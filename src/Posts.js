@@ -18,7 +18,7 @@ function Post (Props) {
               <div class="fundo">
                 <div class="acoes">
                   <div>
-                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon name="heart-outline" ></ion-icon>
                     <ion-icon name="chatbubble-outline"></ion-icon>
                     <ion-icon name="paper-plane-outline"></ion-icon>
                   </div>
@@ -39,12 +39,26 @@ function Post (Props) {
 }
 
 
+let obj = [
+  {img:"./assets/img/meowed.svg",
+  nome:"meowed",
+  conteudo:"./assets/img/gato-telefone.svg",
+  curtidoImg:"./assets/img/respondeai.svg",
+  curtido:"respondeai",
+  numCurtidas: 101.523},
 
+  {img:"./assets/img/barked.svg",
+  nome:"barked",
+  conteudo:"./assets/img/dog.svg",
+  curtidoImg:"./assets/img/adorable_animals.svg",
+  curtido:"adorable_animals",
+  numCurtidas: 99.159}
+]
 
 export default function Posts() {
     return (
         <div class="posts">
-
+          {obj.map((obj)=> <Post img={obj.img} nome={obj.nome} conteudo={obj.conteudo} curtidoImg={obj.curtidoImg} curtido={obj.curtido} numCurtidas={obj.numCurtidas}/>)}
         </div>
     )
 }
