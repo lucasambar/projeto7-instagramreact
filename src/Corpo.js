@@ -1,5 +1,5 @@
-import Sidebar from "./Sidebar";
-import Stories from "./Stories";
+import Sidebar from "./Sidebar.js";
+import Stories from "./Stories.js";
 
 export default function Corpo () {
     return (

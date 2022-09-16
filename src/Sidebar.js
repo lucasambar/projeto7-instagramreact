@@ -1,7 +1,7 @@
 function Usuario () {
     return (
         <div class="usuario">
-            <img src="assets/img/catanacomics.svg" alt=""/>
+            <img src="./assets/img/catanacomics.svg" alt=""/>
             <div class="texto">
             <strong>catanacomics</strong>
             Catana
@@ -28,11 +28,11 @@ function Sugestao (props) {
 
 function Sugestoes () {
     let obj = [
-        {img:"assets/img/bad.vibes.memes.svg", nome:"bad.vibes.memes"},
-        {img:"assets/img/chibirdart.svg", nome:"chibirdart"},
-        {img:"assets/img/razoesparaacreditar.svg", nome:"razoesparaacreditar"},
-        {img:"assets/img/adorable_animals.svg", nome:"adorable_animals"},
-        {img:"assets/img/smallcutecats.svg", nome:"smallcutecats"}
+        {img:"./assets/img/bad.vibes.memes.svg", nome:"bad.vibes.memes"},
+        {img:"./assets/img/chibirdart.svg", nome:"chibirdart"},
+        {img:"./assets/img/razoesparaacreditar.svg", nome:"razoesparaacreditar"},
+        {img:"./assets/img/adorable_animals.svg", nome:"adorable_animals"},
+        {img:"./assets/img/smallcutecats.svg", nome:"smallcutecats"}
     ]
 
     return (

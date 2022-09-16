@@ -1,8 +1,7 @@
-import ReactDOM from 'react-dom'
-import Navbar from "./Navbar"
-import Corpo from "./Corpo"
+import Navbar from "./Navbar.js"
+import Corpo from "./Corpo.js"
 
-function App () {
+export default function App () {
     return (
         <div>
             <Navbar/>
@@ -11,6 +10,3 @@ function App () {
     )
 }
 
-let app = App()
-let elemento = document.querySelector(".root")
-ReactDOM.render(app, elemento);
