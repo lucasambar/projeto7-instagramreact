@@ -313,7 +313,9 @@
   .flex{
     display:flex;
   }
-  
+  .vermelho{
+    color: #F43F2B;
+  }
   @media (max-width: 935px) {
     .sidebar {
       display: none;
