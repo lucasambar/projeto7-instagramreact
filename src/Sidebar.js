@@ -1,15 +1,38 @@
+import React from "react";
+
 function Usuario () {
+    const [foto, setFoto] = React.useState("./assets/img/catanacomics.svg"); 
+    const [nome, setNome] = React.useState("Catana"); 
+
+    function mudarFoto () {
+        let novaFoto = prompt("Insira a URL para a foto nova:")
+        const pattern  = /^(ftp|http|https):\/\/[^ "]+$/
+
+        if (pattern.test(novaFoto)) {setFoto(novaFoto)}
+        else{alert("URL inválida, tente novamente!")}
+    }
+
+    function mudarNome () {
+        let novoNome = prompt("Insira o novo nome de usário:")
+        console.log(novoNome)
+        if (novoNome!==null) {setNome(novoNome)}
+        
+    }
+
     return (
         <div class="usuario">
-            <img src="./assets/img/catanacomics.svg" alt=""/>
+            <img src={foto} alt="" onClick={mudarFoto}/>
             <div class="texto">
             <strong>catanacomics</strong>
-            Catana
-            <ion-icon name="pencil" ></ion-icon>
+            <div class="flex" onClick={mudarNome}>
+                {nome}
+                <ion-icon name="pencil"></ion-icon>
+            </div>
           </div>
         </div>
      )
 }
+
 function Sugestao (props) {
     return (
     <div class="sugestao">
