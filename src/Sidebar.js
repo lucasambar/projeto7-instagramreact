@@ -15,7 +15,7 @@ function Usuario () {
     function mudarNome () {
         let novoNome = prompt("Insira o novo nome de usário:")
         console.log(novoNome)
-        if (novoNome!==null) {setNome(novoNome)}
+        if (novoNome!==null||novoNome==="") {setNome(novoNome)}
         
     }
 

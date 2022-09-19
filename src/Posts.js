@@ -1,43 +1,38 @@
 import React from "react";
 
-let curtidas1 = 101.523
-let curtidas2 = 99.159
-
-
 function Post (Props) {
     let [icon,setIcon] = React.useState("bookmark-outline"); 
-    let boo = false
+    let [boo,setBoo] = React.useState(false)
 
     let [heart,setHeart] = React.useState("heart-outline")
     let [cor,setCor] = React.useState("")
-    let [num,setNum] = React.useState(101523)
-    let booleano =false
+    let [num,setNum] = React.useState(Props.numCurtidas) //mudar
+    let [curtido,setCurtido] = React.useState(true)
 
 
     function salvar () {
       if (!boo) {
         setIcon("bookmark")
-        boo = true
+        setBoo(!boo)
       }
       else {
         setIcon("bookmark-outline")
-        boo = false
+        setBoo(!boo)
       }  
     }
 
     function curtir () {
-      console.log(booleano)
-      if (!booleano) {
-        booleano = true
+      if (curtido) {
         setHeart("heart")
         setCor("vermelho")
-        setNum(num+1)
+        setNum(num+0.001)
+        setCurtido(!curtido)
       }
-      else{
+      else {
         setHeart("heart-outline")
         setCor("")
-        setNum(num-1)
-        booleano = false
+        setNum(num-0.001)
+        setCurtido(!curtido)
       }
     }
 
@@ -53,14 +48,14 @@ function Post (Props) {
                 </div>
               </div>
 
-              <div class="conteudo" onClick={()=>{curtir(Props.numPost)}}>
+              <div class="conteudo" onClick={curtir}>
                 <img src={Props.conteudo} alt="" />
               </div>
 
               <div class="fundo">
                 <div class="acoes">
                   <div>
-                    <ion-icon class={cor} name={heart} onClick={()=>{curtir(Props.numPost)}}></ion-icon>
+                    <ion-icon class={cor} name={heart} onClick={curtir}></ion-icon>
                     <ion-icon name="chatbubble-outline"></ion-icon>
                     <ion-icon name="paper-plane-outline"></ion-icon>
                   </div>
@@ -88,8 +83,7 @@ export default function Posts() {
     conteudo:"./assets/img/gato-telefone.svg",
     curtidoImg:"./assets/img/respondeai.svg",
     curtido:"respondeai",
-    numCurtidas: curtidas1,
-    numPost: 1
+    numCurtidas: 123.122
     },
   
     {img:"./assets/img/barked.svg",
@@ -97,14 +91,13 @@ export default function Posts() {
     conteudo:"./assets/img/dog.svg",
     curtidoImg:"./assets/img/adorable_animals.svg",
     curtido:"adorable_animals",
-    numCurtidas: curtidas2,
-    numPost: 2
+    numCurtidas: 192.444
     }
   ]
 
     return (
         <div class="posts">
-          {obj.map((obj)=> <Post img={obj.img} nome={obj.nome} conteudo={obj.conteudo} curtidoImg={obj.curtidoImg} curtido={obj.curtido} numCurtidas={obj.numCurtidas} numPost={obj.numPost}/>)}
+          {obj.map((obj)=> <Post img={obj.img} nome={obj.nome} conteudo={obj.conteudo} curtidoImg={obj.curtidoImg} curtido={obj.curtido} numCurtidas={obj.numCurtidas} numPost={obj.numPost}/>) }
         </div>
     )
 }
